@@ -1,3 +1,28 @@
+<?php
+include 'db.php';
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+
+$name = $_POST['name'];
+$phoneNumber = $_POST['phoneNumber'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$message = $_POST['message'];
+
+$sql =   "INSERT INTO `newPro`.`contact123`(`name`, `phoneNumber`, `email`, `address`, `message`) VALUES ('$name','$phoneNumber','$email','$address','$message')";
+
+$result = mysqli_query($conn, $sql);
+
+if(!$result){
+  die("Something Went Wrong");
+}
+
+}
+
+
+
+?>
+
 <style>
 
     .aform {
@@ -39,7 +64,7 @@
     }
   </style>
 
-  <form class="aform " id="contactForm">
+  <form class="aform " method="POST" action="contact.php" id="contactForm">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
 
@@ -55,5 +80,5 @@
     <label for="message">Message:</label>
     <textarea id="message" name="message" rows="4" required></textarea>
 
-    <button type="button" class="abutton" onclick="submitForm()">Submit</button>
+    <button type="submit" class="abutton">Submit</button>
   </form>
