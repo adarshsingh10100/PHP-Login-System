@@ -22,3 +22,14 @@ CREATE TABLE `newPro`.`user123` (
     `password` VARCHAR(255) NOT NULL,
     `datetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE `newPro`.`contact123` (
+    `sno` INT AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `phoneNumber` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `message` VARCHAR(255) NOT NULL,
+    `datetime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
